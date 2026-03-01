@@ -1,0 +1,182 @@
+- generic [ref=e6]:
+  - dialog "Are You 21 Or Older?" [ref=e145]:
+    - generic:
+      - generic: Cigarette House
+      - generic: Olive Drive | Bakersfield
+    - generic [ref=e146]:
+      - generic [ref=e147]:
+        - generic [ref=e148]: 21+
+        - generic [ref=e149]: Age Verification Required
+      - paragraph [ref=e150]: Welcome to the Premium Experience
+      - heading "Are You 21 Or Older?" [level=1] [ref=e151]
+      - paragraph [ref=e152]: You must be at least 21 years old to enter this website.
+      - generic [ref=e153]:
+        - button "✓ Yes, I'm 21+" [ref=e154] [cursor=pointer]:
+          - generic [ref=e155]: ✓
+          - text: Yes, I'm 21+
+        - link "No, Exit Site" [ref=e156] [cursor=pointer]:
+          - /url: https://www.google.com/
+      - paragraph [ref=e157]: By entering, you confirm you are of legal smoking age.
+  - banner [ref=e7]:
+    - link "Cigarette House" [ref=e8] [cursor=pointer]:
+      - /url: "#home"
+    - navigation "Primary" [ref=e9]:
+      - link "Products" [ref=e10] [cursor=pointer]:
+        - /url: "#products"
+      - link "Hours" [ref=e11] [cursor=pointer]:
+        - /url: "#hours"
+      - link "Reviews" [ref=e12] [cursor=pointer]:
+        - /url: "#reviews"
+      - link "Visit" [ref=e13] [cursor=pointer]:
+        - /url: "#visit"
+      - link "Store Demo" [ref=e14] [cursor=pointer]:
+        - /url: store-demo.html
+      - link "Contact" [ref=e15] [cursor=pointer]:
+        - /url: "#contact"
+    - link "(661) 829-5627" [ref=e16] [cursor=pointer]:
+      - /url: tel:+16618295627
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: Premium Smoke Shop Experience
+        - heading "Cigarette House On Olive Drive" [level=1] [ref=e177]
+        - paragraph [ref=e23]: Bakersfield's premier destination for premium smoking accessories, vapes, tobacco, hookah, and curated apparel. Experience the difference quality makes.
+        - generic [ref=e24]:
+          - link "📞 Call Now" [ref=e25] [cursor=pointer]:
+            - /url: tel:+16618295627
+            - generic [ref=e26]: 📞
+            - text: Call Now
+          - link "📍 Get Directions" [ref=e27] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=5400+Olive+Dr+Ste+C+Bakersfield+CA+93308
+            - generic [ref=e28]: 📍
+            - text: Get Directions
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e31]: 10+
+            - generic [ref=e32]: Years Serving Bakersfield
+          - generic [ref=e33]:
+            - generic [ref=e34]: 1000+
+            - generic [ref=e35]: Premium Products
+          - generic [ref=e36]:
+            - generic [ref=e37]: 21+
+            - generic [ref=e38]: Age Verified Only
+      - figure [ref=e39]:
+        - img "Cigarette House premium in-store display" [ref=e41]
+    - generic [ref=e42]:
+      - paragraph [ref=e43]: What We Offer
+      - heading "Premium Product Collection" [level=2] [ref=e44]
+      - generic [ref=e45]:
+        - article [ref=e46]:
+          - img "Premium vapes and smoking accessories" [ref=e47]
+          - heading "Vapes & Accessories" [level=3] [ref=e48]
+          - paragraph [ref=e49]: Premium disposables, devices, torches, and daily smoking essentials. Top brands, authentic products.
+        - article [ref=e50]:
+          - img "Tobacco and hookah collection" [ref=e51]
+          - heading "Tobacco & Hookah" [level=3] [ref=e52]
+          - paragraph [ref=e53]: Curated selection of fine tobaccos, hookah supplies, and CBD products. Quality you can taste.
+        - article [ref=e54]:
+          - img "Apparel and merchandise" [ref=e55]
+          - heading "Apparel & More" [level=3] [ref=e56]
+          - paragraph [ref=e57]: Streetwear, accessories, and lifestyle products. Express your style with our curated collection.
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - paragraph [ref=e61]: Hours
+        - heading "Open Late Every Day" [level=3] [ref=e62]
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - generic [ref=e65]: Monday - Saturday
+            - generic [ref=e66]: 8:00 AM - 10:00 PM
+          - listitem [ref=e67]:
+            - generic [ref=e68]: Sunday
+            - generic [ref=e69]: 9:00 AM - 9:00 PM
+          - listitem [ref=e70]:
+            - generic [ref=e71]: Extended Hours
+            - generic [ref=e72]: Up to 2:00 AM (Call to Confirm)
+      - generic [ref=e73]:
+        - paragraph [ref=e74]: Location
+        - heading "Find Us" [level=3] [ref=e75]
+        - list [ref=e76]:
+          - listitem [ref=e77]:
+            - strong [ref=e78]: "Address:"
+            - text: 5400 Olive Dr, Ste C, Bakersfield, CA 93308
+          - listitem [ref=e79]:
+            - strong [ref=e80]: "Phone:"
+            - text: (661) 829-5627
+          - listitem [ref=e81]:
+            - strong [ref=e82]: "Category:"
+            - text: Premium Smoke & Vape Shop
+          - listitem [ref=e83]:
+            - strong [ref=e84]: "Age:"
+            - text: 21+ Only
+    - generic [ref=e85]:
+      - paragraph [ref=e86]: What People Say
+      - heading "Customer Reviews" [level=2] [ref=e87]
+      - generic [ref=e88]:
+        - article [ref=e89]:
+          - generic [ref=e90]: ★★★★★
+          - heading "Great Selection" [level=4] [ref=e91]
+          - paragraph [ref=e92]: "\"Amazing variety of products and the staff really knows their stuff. Found exactly what I was looking for!\""
+          - text: "\""
+        - article [ref=e93]:
+          - generic [ref=e94]: ★★★★☆
+          - heading "Quality Products" [level=4] [ref=e95]
+          - paragraph [ref=e96]: "\"Love the premium selection here. You can tell they curate their inventory carefully. Will be back!\""
+          - text: "\""
+        - article [ref=e97]:
+          - generic [ref=e98]: ★★★★★
+          - heading "Late Night Stop" [level=4] [ref=e99]
+          - paragraph [ref=e100]: "\"Best part is they're open late! Perfect for those nights when you need something last minute.\""
+          - text: "\""
+    - generic [ref=e102]:
+      - paragraph [ref=e103]: Visit Us Today
+      - heading "5400 Olive Dr, Ste C Bakersfield, CA 93308" [level=2] [ref=e104]:
+        - text: 5400 Olive Dr, Ste C
+        - text: Bakersfield, CA 93308
+      - paragraph [ref=e105]: Conveniently located on Olive Drive
+      - paragraph [ref=e106]:
+        - link "(661) 829-5627" [ref=e107] [cursor=pointer]:
+          - /url: tel:+16618295627
+      - generic [ref=e108]:
+        - link "🗺 Open In Maps" [ref=e109] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=5400+Olive+Dr+Ste+C+Bakersfield+CA+93308
+          - generic [ref=e110]: 🗺
+          - text: Open In Maps
+        - link "💬 Text Shop" [ref=e111] [cursor=pointer]:
+          - /url: sms:+16618295627
+          - generic [ref=e112]: 💬
+          - text: Text Shop
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - paragraph [ref=e116]: Get In Touch
+        - heading "Need Something Specific?" [level=2] [ref=e117]
+        - paragraph [ref=e118]: Call us for same-day stock checks, special orders, or any questions. We're here to help!
+        - generic [ref=e119]:
+          - link "📞 Call Us (661) 829-5627 - Fastest response" [ref=e120] [cursor=pointer]:
+            - /url: tel:+16618295627
+            - generic [ref=e121]: 📞
+            - generic [ref=e122]:
+              - heading "Call Us" [level=4] [ref=e123]
+              - paragraph [ref=e124]: (661) 829-5627 - Fastest response
+          - link "💬 Text Us Quick questions via SMS" [ref=e125] [cursor=pointer]:
+            - /url: sms:+16618295627
+            - generic [ref=e126]: 💬
+            - generic [ref=e127]:
+              - heading "Text Us" [level=4] [ref=e128]
+              - paragraph [ref=e129]: Quick questions via SMS
+        - generic [ref=e130]:
+          - link "📸" [ref=e131] [cursor=pointer]:
+            - /url: "#"
+          - link "📘" [ref=e132] [cursor=pointer]:
+            - /url: "#"
+          - link "⭐" [ref=e133] [cursor=pointer]:
+            - /url: "#"
+      - iframe [ref=e136]:
+        
+  - contentinfo [ref=e137]:
+    - generic [ref=e138]:
+      - generic [ref=e139]: Cigarette House
+      - paragraph [ref=e140]: © 2025 Cigarette House. All rights reserved. 21+ Only.
+  - button "🔥 Get 15% Off" [ref=e141] [cursor=pointer]:
+    - generic [ref=e143]: 🔥
+    - generic [ref=e144]: Get 15% Off
+  - text: ✓

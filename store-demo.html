@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Store Demo | Cigarette House E-Commerce Platform</title>
+  <meta name="description" content="Demo of Cigarette House's upcoming online store with nationwide shipping, local pickup, inventory management, and loyalty program." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Store Demo Specific Styles */
+    .store-hero {
+      text-align: center;
+      padding: 4rem 0;
+    }
+    
+    .store-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      margin-bottom: 1rem;
+    }
+    
+    .store-hero h1 span {
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .store-hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    
+    .demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid var(--neon-blue);
+      border-radius: 999px;
+      color: var(--neon-blue);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    .demo-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--neon-cyan);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    /* Feature Cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    
+    .feature-card {
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0, 212, 255, 0.4);
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.15);
+    }
+    
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-cyan));
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+    }
+    
+    .feature-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    /* Demo Interface */
+    .demo-interface {
+      border: 2px solid var(--panel-border);
+      border-radius: 24px;
+      background: var(--panel);
+      overflow: hidden;
+      margin: 3rem 0;
+    }
+    
+    .demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid var(--panel-border);
+    }
+    
+    .demo-tabs {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .demo-tab {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .demo-tab:hover {
+      color: var(--text);
+    }
+    
+    .demo-tab.active {
+      border-color: var(--neon-blue);
+      color: var(--neon-blue);
+      background: rgba(0, 212, 255, 0.1);
+    }
+    
+    .cart-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--neon-cyan);
+      border-radius: 10px;
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--neon-cyan);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .cart-btn:hover {
+      background: var(--neon-cyan);
+      color: #000;
+    }
+    
+    .cart-count {
+      background: var(--neon-cyan);
+      color: #000;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+    
+    /* Demo Content */
+    .demo-content {
+      padding: 2rem;
+      min-height: 500px;
+    }
+    
+    .demo-panel {
+      display: none;
+    }
+    
+    .demo-panel.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Shop Panel */
+    .shop-filters {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--neon-blue);
+      color: var(--neon-blue);
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .shop-product {
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .shop-product:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+    
+    .product-image {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      position: relative;
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 0.3rem 0.8rem;
+      background: var(--neon-cyan);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 999px;
+    }
+    
+    .product-badge.ship {
+      background: var(--neon-blue);
+    }
+    
+    .product-info {
+      padding: 1.2rem;
+    }
+    
+    .product-info h4 {
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+    }
+    
+    .product-info .category {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .product-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--neon-cyan);
+    }
+    
+    .add-to-cart {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--neon-blue);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--neon-blue);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: grid;
+      place-items: center;
+    }
+    
+    .add-to-cart:hover {
+      background: var(--neon-blue);
+      color: #000;
+    }
+    
+    /* Inventory Panel */
+    .inventory-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-box {
+      padding: 1.5rem;
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    
+    .stat-box h4 {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-box .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--neon-blue);
+    }
+    
+    .inventory-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .inventory-table th,
+    .inventory-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    
+    .inventory-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .stock-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .stock-high {
+      background: rgba(0, 255, 136, 0.15);
+      color: var(--neon-cyan);
+    }
+    
+    .stock-medium {
+      background: rgba(255, 193, 7, 0.15);
+      color: #ffc107;
+    }
+    
+    .stock-low {
+      background: rgba(255, 71, 87, 0.15);
+      color: #ff4757;
+    }
+    
+    /* Loyalty Panel */
+    .loyalty-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .loyalty-card-preview {
+      border: 2px solid transparent;
+      border-radius: 24px;
+      background: linear-gradient(#0a0a0f, #0a0a0f) padding-box,
+                  linear-gradient(135deg, var(--neon-blue), var(--neon-cyan), var(--neon-purple)) border-box;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .loyalty-card-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1), transparent 50%);
+    }
+    
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .card-logo {
+      font-family: "Rajdhani", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--neon-blue);
+    }
+    
+    .card-tier {
+      padding: 0.4rem 1rem;
+      background: rgba(0, 212, 255, 0.2);
+      border-radius: 999px;
+      color: var(--neon-blue);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .card-member {
+      position: relative;
+    }
+    
+    .card-member h3 {
+      margin-bottom: 0.3rem;
+    }
+    
+    .card-member p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    .points-display h2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .points-display p {
+      color: var(--text-muted);
+    }
+    
+    .progress-bar {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      margin-top: 1.5rem;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      width: 65%;
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));
+      border-radius: 999px;
+      transition: width 1s ease;
+    }
+    
+    /* Rewards Grid */
+    .rewards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .reward-card {
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .reward-card:hover {
+      border-color: var(--neon-cyan);
+      transform: translateY(-5px);
+    }
+    
+    .reward-points {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      margin-bottom: 0.5rem;
+    }
+    
+    .reward-name {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .reward-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .claim-btn {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid var(--neon-cyan);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--neon-cyan);
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .claim-btn:hover {
+      background: var(--neon-cyan);
+      color: #000;
+    }
+    
+    .claim-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    /* Cart Modal */
+    .cart-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      place-items: center;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+    }
+    
+    .cart-modal.active {
+      display: grid;
+    }
+    
+    .cart-content {
+      width: min(600px, 90vw);
+      max-height: 80vh;
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      background: var(--panel);
+      overflow: hidden;
+    }
+    
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    
+    .cart-header h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .close-cart {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--panel-border);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .close-cart:hover {
+      border-color: var(--neon-blue);
+      color: var(--neon-blue);
+    }
+    
+    .cart-items {
+      padding: 1.5rem 2rem;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    
+    .cart-item-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+    }
+    
+    .cart-item-info {
+      flex: 1;
+    }
+    
+    .cart-item-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    
+    .cart-item-info p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    
+    .cart-item-price {
+      font-weight: 700;
+      color: var(--neon-cyan);
+    }
+    
+    .cart-footer {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--panel-border);
+      background: rgba(0, 0, 0, 0.3);
+    }
+    
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .cart-total span:first-child {
+      color: var(--text-muted);
+    }
+    
+    .cart-total span:last-child {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--neon-cyan);
+    }
+    
+    .checkout-btn {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-cyan));
+      color: #000;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .checkout-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    }
+    
+    .delivery-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .delivery-option {
+      padding: 1rem;
+      border: 2px solid var(--panel-border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .delivery-option:hover,
+    .delivery-option.selected {
+      border-color: var(--neon-blue);
+      background: rgba(0, 212, 255, 0.1);
+    }
+    
+    .delivery-option h4 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .delivery-option p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    
+    /* Checkout Modal */
+    .checkout-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: none;
+      place-items: center;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(20px);
+    }
+    
+    .checkout-modal.active {
+      display: grid;
+    }
+    
+    .checkout-content {
+      width: min(500px, 90vw);
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      background: var(--panel);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    
+    .checkout-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-cyan));
+      display: grid;
+      place-items: center;
+      font-size: 2.5rem;
+      animation: scaleIn 0.5s ease;
+    }
+    
+    @keyframes scaleIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+    
+    .checkout-content h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .checkout-content p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    
+    .order-details {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    
+    .order-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    
+    .order-row:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      color: var(--neon-cyan);
+    }
+    
+    @media (max-width: 900px) {
+      .feature-grid,
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .inventory-stats,
+      .rewards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .loyalty-header {
+        grid-template-columns: 1fr;
+      }
+      
+      .demo-tabs {
+        flex-wrap: wrap;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .products-grid,
+      .inventory-stats,
+      .rewards-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Smoke Background -->
+  <div class="smoke-container">
+    <canvas id="smoke-canvas" class="smoke-canvas"></canvas>
+  </div>
+  <div class="smoke-overlay"></div>
+
+  <div class="content-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <a class="logo" href="index.html">Cigarette House</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="store-demo.html" style="color: var(--neon-blue);">Store Demo</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="tel:+16618295627">(661) 829-5627</a>
+    </header>
+
+    <main>
+      <!-- Store Hero -->
+      <section class="section store-hero">
+        <div class="demo-badge">LIVE DEMO SYSTEM</div>
+        <h1 class="reveal">
+          <span>Online Store</span><br>
+          Coming Soon
+        </h1>
+        <p class="reveal">
+          We're building a complete e-commerce platform with nationwide shipping, 
+          local pickup, real-time inventory, and a rewards program that keeps customers coming back.
+        </p>
+        <div class="cta-row reveal" style="justify-content: center;">
+          <button class="btn btn-primary" onclick="scrollToDemo()">
+            🚀 Try The Demo
+          </button>
+          <a href="#features" class="btn btn-secondary">
+            📋 View Features
+          </a>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="section">
+        <p class="eyebrow reveal">Platform Features</p>
+        <h2 class="reveal">Everything You Need</h2>
+        
+        <div class="feature-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon">🚚</div>
+            <h3>Nationwide Shipping</h3>
+            <p>Ship products across the country with integrated tracking and automated notifications.</p>
+          </div>
+          
+          <div class="feature-card reveal">
+            <div class="feature-icon">🏪</div>
+            <h3>Local Pickup</h3>
+            <p>Customers can order online and pick up in-store. Skip the shipping wait!</p>
+          </div>
+          
+          <div class="feature-card reveal">
+            <div class="feature-icon">📦</div>
+            <h3>Inventory System</h3>
+            <p>Real-time stock tracking, low inventory alerts, and automatic reordering.</p>
+          </div>
+          
+          <div class="feature-card reveal">
+            <div class="feature-icon">💎</div>
+            <h3>Loyalty Program</h3>
+            <p>Reward repeat customers with points, exclusive discounts, and VIP perks.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Demo -->
+      <section id="demo" class="section">
+        <p class="eyebrow reveal">Interactive Demo</p>
+        <h2 class="reveal">Try It Yourself</h2>
+        
+        <div class="demo-interface reveal-scale">
+          <!-- Demo Header -->
+          <div class="demo-header">
+            <div class="demo-tabs">
+              <button class="demo-tab active" onclick="switchTab('shop')">🛍️ Online Shop</button>
+              <button class="demo-tab" onclick="switchTab('inventory')">📊 Inventory</button>
+              <button class="demo-tab" onclick="switchTab('loyalty')">💎 Loyalty</button>
+            </div>
+            <button class="cart-btn" onclick="toggleCart()">
+              🛒 Cart <span class="cart-count" id="cart-count">0</span>
+            </button>
+          </div>
+          
+          <!-- Demo Content -->
+          <div class="demo-content">
+            
+            <!-- Shop Panel -->
+            <div class="demo-panel active" id="shop-panel">
+              <div class="shop-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                <button class="filter-btn" onclick="filterProducts('vapes')">Vapes</button>
+                <button class="filter-btn" onclick="filterProducts('tobacco')">Tobacco</button>
+                <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+              </div>
+              
+              <div class="products-grid" id="products-grid">
+                <!-- Products injected by JS -->
+              </div>
+            </div>
+            
+            <!-- Inventory Panel -->
+            <div class="demo-panel" id="inventory-panel">
+              <div class="inventory-stats">
+                <div class="stat-box">
+                  <h4>Total Products</h4>
+                  <div class="value">1,247</div>
+                </div>
+                <div class="stat-box">
+                  <h4>In Stock</h4>
+                  <div class="value">892</div>
+                </div>
+                <div class="stat-box">
+                  <h4>Low Stock</h4>
+                  <div class="value">23</div>
+                </div>
+                <div class="stat-box">
+                  <h4>Orders Today</h4>
+                  <div class="value">18</div>
+                </div>
+              </div>
+              
+              <table class="inventory-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>SKU</th>
+                    <th>Stock Level</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="inventory-body">
+                  <!-- Inventory rows injected by JS -->
+                </tbody>
+              </table>
+            </div>
+            
+            <!-- Loyalty Panel -->
+            <div class="demo-panel" id="loyalty-panel">
+              <div class="loyalty-header">
+                <div class="loyalty-card-preview">
+                  <div class="card-header">
+                    <span class="card-logo">Cigarette House</span>
+                    <span class="card-tier">GOLD MEMBER</span>
+                  </div>
+                  <div class="card-member">
+                    <h3>Alex Johnson</h3>
+                    <p>Member since 2024</p>
+                  </div>
+                </div>
+                
+                <div class="points-display">
+                  <h2 class="neon-text-cyan">2,450 Points</h2>
+                  <p>You're 550 points away from PLATINUM status!</p>
+                  <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                  </div>
+                  <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    💡 Earn 1 point per $1 spent. Double points on weekends!
+                  </p>
+                </div>
+              </div>
+              
+              <h3 style="margin-bottom: 1.5rem;">Available Rewards</h3>
+              <div class="rewards-grid" id="rewards-grid">
+                <!-- Rewards injected by JS -->
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="section">
+        <p class="eyebrow reveal">Investment</p>
+        <h2 class="reveal">E-Commerce Package</h2>
+        
+        <div style="max-width: 600px; margin: 3rem auto; border: 2px solid var(--neon-blue); border-radius: 24px; padding: 3rem; text-align: center; background: var(--panel);">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Complete Store Setup</h3>
+          <div style="font-size: 4rem; font-weight: 700; color: var(--neon-cyan); margin: 1.5rem 0;">$8,500</div>
+          <p style="color: var(--text-muted); margin-bottom: 2rem;">One-time setup + $200/month hosting & maintenance</p>
+          
+          <ul style="list-style: none; padding: 0; margin-bottom: 2rem; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto;">
+            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--panel-border); display: flex; align-items: center; gap: 0.8rem;">✅ <span>Full Online Store with 100+ Products</span></li>
+            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--panel-border); display: flex; align-items: center; gap: 0.8rem;">✅ <span>Nationwide Shipping Integration</span></li>
+            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--panel-border); display: flex; align-items: center; gap: 0.8rem;">✅ <span>Local Pickup System</span></li>
+            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--panel-border); display: flex; align-items: center; gap: 0.8rem;">✅ <span>Real-Time Inventory Management</span></li>
+            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--panel-border); display: flex; align-items: center; gap: 0.8rem;">✅ <span>Loyalty & Rewards Program</span></li>
+            <li style="padding: 0.8rem 0; display: flex; align-items: center; gap: 0.8rem;">✅ <span>Admin Dashboard & Analytics</span></li>
+          </ul>
+          
+          <button class="btn btn-primary" style="width: 100%;" onclick="showContactModal()">
+            Get Started Today
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">Cigarette House</div>
+        <p class="footer-copy">© 2025 Cigarette House. Demo System. 21+ Only.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h3>🛒 Your Cart</h3>
+        <button class="close-cart" onclick="toggleCart()">×</button>
+      </div>
+      
+      <div class="delivery-options">
+        <div class="delivery-option selected" onclick="selectDelivery(this, 'shipping')">
+          <h4>🚚 Shipping</h4>
+          <p>Nationwide delivery 3-5 days</p>
+        </div>
+        <div class="delivery-option" onclick="selectDelivery(this, 'pickup')">
+          <h4>🏪 Local Pickup</h4>
+          <p>Pick up at Olive Drive store</p>
+        </div>
+      </div>
+      
+      <div class="cart-items" id="cart-items">
+        <p style="text-align: center; color: var(--text-muted); padding: 2rem;">Your cart is empty</p>
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Success Modal -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-content">
+      <div class="checkout-icon">✓</div>
+      <h2>Order Confirmed!</h2>
+      <p>This is a demo. In the real system, payment would be processed and order confirmation sent via email/SMS.</p>
+      
+      <div class="order-details">
+        <div class="order-row">
+          <span>Order Number</span>
+          <span>#CH-2025-00184</span>
+        </div>
+        <div class="order-row">
+          <span>Items</span>
+          <span id="order-items-count">3 items</span>
+        </div>
+        <div class="order-row">
+          <span>Total</span>
+          <span id="order-total">$0.00</span>
+        </div>
+        <div class="order-row">
+          <span>Points Earned</span>
+          <span style="color: var(--neon-cyan);">+125 pts</span>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary" onclick="closeCheckout()" style="width: 100%;">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="checkout-modal" id="contact-modal">
+    <div class="checkout-content">
+      <div class="checkout-icon">📞</div>
+      <h2>Let's Build Your Store</h2>
+      <p>Ready to launch your online store? Contact us to get started.</p>
+      
+      <div style="background: rgba(0, 0, 0, 0.3); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem;">
+        <p style="margin-bottom: 1rem;"><strong>📞 Call:</strong> <a href="tel:+16618295627" style="color: var(--neon-cyan);">(661) 829-5627</a></p>
+        <p><strong>📍 Visit:</strong> 5400 Olive Dr, Ste C, Bakersfield, CA</p>
+      </div>
+      
+      <button class="btn btn-primary" onclick="closeContactModal()" style="width: 100%;">
+        Got It!
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Store Demo Data
+    const products = [
+      { id: 1, name: "Elite Vape Pro", category: "vapes", price: 89.99, emoji: "💨", badge: "ship", stock: 45 },
+      { id: 2, name: "Tobacco Blend #7", category: "tobacco", price: 24.99, emoji: "🌿", badge: "ship", stock: 120 },
+      { id: 3, name: "Premium Grinder", category: "accessories", price: 34.99, emoji: "⚙️", badge: "pickup", stock: 23 },
+      { id: 4, name: "Glass Collection Set", category: "accessories", price: 149.99, emoji: "🥃", badge: "pickup", stock: 8 },
+      { id: 5, name: "Disposable Vape Pack", category: "vapes", price: 49.99, emoji: "🔋", badge: "ship", stock: 200 },
+      { id: 6, name: "Hookah Premium", category: "tobacco", price: 199.99, emoji: "💨", badge: "pickup", stock: 5 },
+      { id: 7, name: "Rolling Papers (5pk)", category: "accessories", price: 12.99, emoji: "📃", badge: "ship", stock: 500 },
+      { id: 8, name: "Torch Lighter", category: "accessories", price: 29.99, emoji: "🔥", badge: "ship", stock: 67 },
+    ];
+    
+    const inventoryData = [
+      { name: "Elite Vape Pro", sku: "VP-001", qty: 45, status: "high" },
+      { name: "Tobacco Blend #7", sku: "TB-007", qty: 120, status: "high" },
+      { name: "Premium Grinder", sku: "AC-023", qty: 23, status: "medium" },
+      { name: "Glass Collection Set", sku: "GL-104", qty: 8, status: "low" },
+      { name: "Disposable Vape Pack", sku: "VP-089", qty: 200, status: "high" },
+      { name: "Hookah Premium", sku: "HK-001", qty: 5, status: "low" },
+      { name: "Rolling Papers (5pk)", sku: "RP-005", qty: 500, status: "high" },
+      { name: "Torch Lighter", sku: "TL-032", qty: 67, status: "high" },
+    ];
+    
+    const rewards = [
+      { points: 500, name: "$5 Off", desc: "Any purchase over $25", claimable: true },
+      { points: 1000, name: "$15 Off", desc: "Any purchase over $50", claimable: true },
+      { points: 2000, name: "Free Shipping", desc: "Nationwide, any order", claimable: true },
+      { points: 3000, name: "$50 Store Credit", desc: "Use on anything", claimable: false },
+      { points: 5000, name: "VIP Status", desc: "20% off for 1 year", claimable: false },
+      { points: 10000, name: "Mystery Box", desc: "$200 value surprise", claimable: false },
+    ];
+    
+    let cart = [];
+    let currentFilter = 'all';
+    let deliveryMethod = 'shipping';
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      renderInventory();
+      renderRewards();
+    });
+    
+    // Tab Switching
+    function switchTab(tab) {
+      document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.demo-panel').forEach(p => p.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      document.getElementById(tab + '-panel').classList.add('active');
+    }
+    
+    // Product Rendering
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const filtered = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
+      
+      grid.innerHTML = filtered.map(p => `
+        <div class="shop-product">
+          <div class="product-image">
+            ${p.badge === 'ship' ? '<span class="product-badge ship">📦 Ships</span>' : '<span class="product-badge">🏪 Pickup</span>'}
+            ${p.emoji}
+          </div>
+          <div class="product-info">
+            <h4>${p.name}</h4>
+            <p class="category">${p.category.charAt(0).toUpperCase() + p.category.slice(1)}</p>
+            <div class="product-price-row">
+              <span class="product-price">$${p.price.toFixed(2)}</span>
+              <button class="add-to-cart" onclick="addToCart(${p.id})">+</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    function filterProducts(category) {
+      currentFilter = category;
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      renderProducts();
+    }
+    
+    // Cart Functions
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      const existing = cart.find(item => item.id === productId);
+      
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      
+      updateCartUI();
+      showNotification(`${product.name} added to cart!`);
+    }
+    
+    function updateCartUI() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('cart-count').textContent = count;
+      
+      const itemsContainer = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '<p style="text-align: center; color: var(--text-muted); padding: 2rem;">Your cart is empty</p>';
+      } else {
+        itemsContainer.innerHTML = cart.map(item => `
+          <div class="cart-item">
+            <div class="cart-item-image">${item.emoji}</div>
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <p>Qty: ${item.qty}</p>
+            </div>
+            <span class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
+          </div>
+        `).join('');
+      }
+      
+      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      document.getElementById('cart-total').textContent = '$' + total.toFixed(2);
+    }
+    
+    function toggleCart() {
+      document.getElementById('cart-modal').classList.toggle('active');
+    }
+    
+    function selectDelivery(el, method) {
+      document.querySelectorAll('.delivery-option').forEach(opt => opt.classList.remove('selected'));
+      el.classList.add('selected');
+      deliveryMethod = method;
+    }
+    
+    function checkout() {
+      if (cart.length === 0) return;
+      
+      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      document.getElementById('order-items-count').textContent = cart.reduce((sum, item) => sum + item.qty, 0) + ' items';
+      document.getElementById('order-total').textContent = '$' + total.toFixed(2);
+      
+      toggleCart();
+      document.getElementById('checkout-modal').classList.add('active');
+      
+      // Clear cart
+      cart = [];
+      updateCartUI();
+    }
+    
+    function closeCheckout() {
+      document.getElementById('checkout-modal').classList.remove('active');
+    }
+    
+    // Inventory Rendering
+    function renderInventory() {
+      const tbody = document.getElementById('inventory-body');
+      tbody.innerHTML = inventoryData.map(item => `
+        <tr>
+          <td><strong>${item.name}</strong></td>
+          <td>${item.sku}</td>
+          <td>${item.qty} units</td>
+          <td>
+            <span class="stock-indicator stock-${item.status}">
+              ${item.status === 'high' ? '● In Stock' : item.status === 'medium' ? '● Medium' : '● Low Stock'}
+            </span>
+          </td>
+        </tr>
+      `).join('');
+    }
+    
+    // Rewards Rendering
+    function renderRewards() {
+      const grid = document.getElementById('rewards-grid');
+      grid.innerHTML = rewards.map(r => `
+        <div class="reward-card">
+          <div class="reward-points">${r.points}</div>
+          <div class="reward-name">${r.name}</div>
+          <div class="reward-desc">${r.desc}</div>
+          <button class="claim-btn" ${!r.claimable ? 'disabled' : ''} onclick="claimReward(${r.points})">
+            ${r.claimable ? 'Claim Reward' : 'Locked'}
+          </button>
+        </div>
+      `).join('');
+    }
+    
+    function claimReward(points) {
+      showNotification(`Demo: ${points} points reward would be claimed!`);
+    }
+    
+    // Notification
+    function showNotification(message) {
+      const notif = document.createElement('div');
+      notif.style.cssText = `
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--neon-cyan);
+        color: #000;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-weight: 600;
+        z-index: 1000;
+        animation: slideUp 0.3s ease;
+      `;
+      notif.textContent = message;
+      document.body.appendChild(notif);
+      
+      setTimeout(() => {
+        notif.style.animation = 'slideUp 0.3s ease reverse';
+        setTimeout(() => notif.remove(), 300);
+      }, 2000);
+    }
+    
+    // Scroll
+    function scrollToDemo() {
+      document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Contact Modal
+    function showContactModal() {
+      document.getElementById('contact-modal').classList.add('active');
+    }
+    
+    function closeContactModal() {
+      document.getElementById('contact-modal').classList.remove('active');
+    }
+    
+    // Close modals on backdrop click
+    document.getElementById('cart-modal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) toggleCart();
+    });
+    document.getElementById('checkout-modal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeCheckout();
+    });
+    document.getElementById('contact-modal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeContactModal();
+    });
+  </script>
+</body>
+</html>

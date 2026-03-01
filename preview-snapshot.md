@@ -1,0 +1,160 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Cigarette House" [ref=e4] [cursor=pointer]:
+      - /url: "#home"
+    - navigation "Primary" [ref=e5]:
+      - link "Products" [ref=e6] [cursor=pointer]:
+        - /url: "#products"
+      - link "Hours" [ref=e7] [cursor=pointer]:
+        - /url: "#hours"
+      - link "Reviews" [ref=e8] [cursor=pointer]:
+        - /url: "#reviews"
+      - link "Visit" [ref=e9] [cursor=pointer]:
+        - /url: "#visit"
+      - link "Store Demo" [ref=e10] [cursor=pointer]:
+        - /url: store-demo.html
+      - link "Contact" [ref=e11] [cursor=pointer]:
+        - /url: "#contact"
+    - link "(661) 829-5627" [ref=e12] [cursor=pointer]:
+      - /url: tel:+16618295627
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: Premium Smoke Shop Experience
+        - heading "Cigarette House On Olive Drive" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Bakersfield's premier destination for premium smoking accessories, vapes, tobacco, hookah, and curated apparel. Experience the difference quality makes.
+        - generic [ref=e19]:
+          - link "📞 Call Now" [ref=e20] [cursor=pointer]:
+            - /url: tel:+16618295627
+            - generic [ref=e21]: 📞
+            - text: Call Now
+          - link "📍 Get Directions" [ref=e22] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=5400+Olive+Dr+Ste+C+Bakersfield+CA+93308
+            - generic [ref=e23]: 📍
+            - text: Get Directions
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic [ref=e26]: 10+
+            - generic [ref=e27]: Years Serving Bakersfield
+          - generic [ref=e28]:
+            - generic [ref=e29]: 1000+
+            - generic [ref=e30]: Premium Products
+          - generic [ref=e31]:
+            - generic [ref=e32]: 21+
+            - generic [ref=e33]: Age Verified Only
+      - figure [ref=e34]:
+        - img "Cigarette House premium in-store display" [ref=e36]
+    - generic [ref=e37]:
+      - paragraph [ref=e38]: What We Offer
+      - heading "Premium Product Collection" [level=2] [ref=e39]
+      - generic [ref=e40]:
+        - article [ref=e41]:
+          - img "Premium vapes and smoking accessories" [ref=e42]
+          - heading "Vapes & Accessories" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Premium disposables, devices, torches, and daily smoking essentials. Top brands, authentic products.
+        - article [ref=e45]:
+          - img "Tobacco and hookah collection" [ref=e46]
+          - heading "Tobacco & Hookah" [level=3] [ref=e47]
+          - paragraph [ref=e48]: Curated selection of fine tobaccos, hookah supplies, and CBD products. Quality you can taste.
+        - article [ref=e49]:
+          - img "Apparel and merchandise" [ref=e50]
+          - heading "Apparel & More" [level=3] [ref=e51]
+          - paragraph [ref=e52]: Streetwear, accessories, and lifestyle products. Express your style with our curated collection.
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - paragraph [ref=e56]: Hours
+        - heading "Open Late Every Day" [level=3] [ref=e57]
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - generic [ref=e60]: Monday - Saturday
+            - generic [ref=e61]: 8:00 AM - 10:00 PM
+          - listitem [ref=e62]:
+            - generic [ref=e63]: Sunday
+            - generic [ref=e64]: 9:00 AM - 9:00 PM
+          - listitem [ref=e65]:
+            - generic [ref=e66]: Extended Hours
+            - generic [ref=e67]: Up to 2:00 AM (Call to Confirm)
+      - generic [ref=e68]:
+        - paragraph [ref=e69]: Location
+        - heading "Find Us" [level=3] [ref=e70]
+        - list [ref=e71]:
+          - listitem [ref=e72]:
+            - strong [ref=e73]: "Address:"
+            - text: 5400 Olive Dr, Ste C, Bakersfield, CA 93308
+          - listitem [ref=e74]:
+            - strong [ref=e75]: "Phone:"
+            - text: (661) 829-5627
+          - listitem [ref=e76]:
+            - strong [ref=e77]: "Category:"
+            - text: Premium Smoke & Vape Shop
+          - listitem [ref=e78]:
+            - strong [ref=e79]: "Age:"
+            - text: 21+ Only
+    - generic [ref=e80]:
+      - paragraph [ref=e81]: What People Say
+      - heading "Customer Reviews" [level=2] [ref=e82]
+      - generic [ref=e83]:
+        - article [ref=e84]:
+          - generic [ref=e85]: ★★★★★
+          - heading "Great Selection" [level=4] [ref=e86]
+          - paragraph [ref=e87]: "\"Amazing variety of products and the staff really knows their stuff. Found exactly what I was looking for!\""
+          - text: "\""
+        - article [ref=e88]:
+          - generic [ref=e89]: ★★★★☆
+          - heading "Quality Products" [level=4] [ref=e90]
+          - paragraph [ref=e91]: "\"Love the premium selection here. You can tell they curate their inventory carefully. Will be back!\""
+          - text: "\""
+        - article [ref=e92]:
+          - generic [ref=e93]: ★★★★★
+          - heading "Late Night Stop" [level=4] [ref=e94]
+          - paragraph [ref=e95]: "\"Best part is they're open late! Perfect for those nights when you need something last minute.\""
+          - text: "\""
+    - generic [ref=e97]:
+      - paragraph [ref=e98]: Visit Us Today
+      - heading "5400 Olive Dr, Ste C Bakersfield, CA 93308" [level=2] [ref=e99]:
+        - text: 5400 Olive Dr, Ste C
+        - text: Bakersfield, CA 93308
+      - paragraph [ref=e100]: Conveniently located on Olive Drive
+      - paragraph [ref=e101]:
+        - link "(661) 829-5627" [ref=e102] [cursor=pointer]:
+          - /url: tel:+16618295627
+      - generic [ref=e103]:
+        - link "🗺 Open In Maps" [ref=e104] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=5400+Olive+Dr+Ste+C+Bakersfield+CA+93308
+          - generic [ref=e105]: 🗺
+          - text: Open In Maps
+        - link "💬 Text Shop" [ref=e106] [cursor=pointer]:
+          - /url: sms:+16618295627
+          - generic [ref=e107]: 💬
+          - text: Text Shop
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - paragraph [ref=e111]: Get In Touch
+        - heading "Need Something Specific?" [level=2] [ref=e112]
+        - paragraph [ref=e113]: Call us for same-day stock checks, special orders, or any questions. We're here to help!
+        - generic [ref=e114]:
+          - link "📞 Call Us (661) 829-5627 - Fastest response" [ref=e115] [cursor=pointer]:
+            - /url: tel:+16618295627
+            - generic [ref=e116]: 📞
+            - generic [ref=e117]:
+              - heading "Call Us" [level=4] [ref=e118]
+              - paragraph [ref=e119]: (661) 829-5627 - Fastest response
+          - link "💬 Text Us Quick questions via SMS" [ref=e120] [cursor=pointer]:
+            - /url: sms:+16618295627
+            - generic [ref=e121]: 💬
+            - generic [ref=e122]:
+              - heading "Text Us" [level=4] [ref=e123]
+              - paragraph [ref=e124]: Quick questions via SMS
+        - generic [ref=e125]:
+          - link "📸" [ref=e126] [cursor=pointer]:
+            - /url: "#"
+          - link "📘" [ref=e127] [cursor=pointer]:
+            - /url: "#"
+          - link "⭐" [ref=e128] [cursor=pointer]:
+            - /url: "#"
+      - iframe [ref=e131]:
+        
+  - contentinfo [ref=e132]:
+    - generic [ref=e133]:
+      - generic [ref=e134]: Cigarette House
+      - paragraph [ref=e135]: © 2025 Cigarette House. All rights reserved. 21+ Only.

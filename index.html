@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cigarette House | Premium Smoke & Vape Shop | Bakersfield</title>
+  <meta name="description" content="Cigarette House is Bakersfield's premier smoke shop on Olive Drive. Premium vapes, tobacco, hookah, and accessories. 21+ only." />
+  <meta name="theme-color" content="#000000" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TobaccoShop",
+    "name": "Cigarette House",
+    "telephone": "+1-661-829-5627",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5400 Olive Dr Ste C",
+      "addressLocality": "Bakersfield",
+      "addressRegion": "CA",
+      "postalCode": "93308",
+      "addressCountry": "US"
+    },
+    "areaServed": "Bakersfield",
+    "description": "Premium smoke and vape shop with high-end accessories, tobacco, hookah, and apparel. 21+ only."
+  }
+  </script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Loading Experience</div>
+    </div>
+  </div>
+
+  <!-- Smoke & Particle Backgrounds -->
+  <div class="smoke-container">
+    <canvas id="smoke-canvas" class="smoke-canvas"></canvas>
+    <canvas id="orbs-canvas" class="smoke-canvas"></canvas>
+  </div>
+  <div class="smoke-overlay"></div>
+
+  <!-- Content Wrapper -->
+  <div class="content-wrapper">
+    
+    <!-- Age Gate -->
+    <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" aria-hidden="false">
+      <div class="gate-scene" aria-hidden="true">
+        <div class="entry-sign neon-text">Cigarette House</div>
+        <div class="entry-subsign">Olive Drive | Bakersfield</div>
+        <div class="door door-left"><span class="handle"></span></div>
+        <div class="door door-right"><span class="handle"></span></div>
+        <div class="seam"></div>
+      </div>
+      <div class="gate-panel">
+        <div class="ru-badge">
+          <span>21+</span>
+          <small>Age Verification Required</small>
+        </div>
+        <p class="gate-kicker">Welcome to the Premium Experience</p>
+        <h1 id="gate-title" class="neon-text">Are You 21 Or Older?</h1>
+        <p class="gate-copy">You must be at least 21 years old to enter this website.</p>
+        <div class="gate-actions">
+          <button id="enter-btn" class="btn btn-primary" type="button">
+            <span>✓</span> Yes, I'm 21+
+          </button>
+          <a class="btn btn-secondary" href="https://www.google.com/">No, Exit Site</a>
+        </div>
+        <p class="gate-note">By entering, you confirm you are of legal smoking age.</p>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <a class="logo" href="#home">Cigarette House</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#products">Products</a>
+        <a href="#hours">Hours</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+        <a href="store-demo.html">Store Demo</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="tel:+16618295627">(661) 829-5627</a>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      
+      <!-- Hero Section -->
+      <section id="home" class="section hero">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Premium Smoke Shop Experience</p>
+          <h1 class="reveal-left">
+            <span class="neon-text">Cigarette House</span>
+            On Olive Drive
+          </h1>
+          <p class="reveal">
+            Bakersfield's premier destination for premium smoking accessories, vapes, 
+            tobacco, hookah, and curated apparel. Experience the difference quality makes.
+          </p>
+          <div class="cta-row reveal">
+            <a class="btn btn-primary" href="tel:+16618295627">
+              <span>📞</span> Call Now
+            </a>
+            <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=5400+Olive+Dr+Ste+C+Bakersfield+CA+93308" target="_blank" rel="noopener noreferrer">
+              <span>📍</span> Get Directions
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="stat-row reveal-scale">
+            <div class="stat-card">
+              <span class="number">10+</span>
+              <span class="label">Years Serving Bakersfield</span>
+            </div>
+            <div class="stat-card">
+              <span class="number">1000+</span>
+              <span class="label">Premium Products</span>
+            </div>
+            <div class="stat-card">
+              <span class="number">21+</span>
+              <span class="label">Age Verified Only</span>
+            </div>
+          </div>
+        </div>
+        
+        <figure class="hero-media reveal-right floating">
+          <div class="glow-ring"></div>
+          <img src="images/yelp-2.jpg" alt="Cigarette House premium in-store display" width="591" height="400" loading="eager" decoding="async" />
+        </figure>
+      </section>
+
+      <!-- Products Section -->
+      <section id="products" class="section">
+        <p class="eyebrow reveal">What We Offer</p>
+        <h2 class="reveal">Premium Product Collection</h2>
+        
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <img src="images/yelp-2.jpg" alt="Premium vapes and smoking accessories" loading="lazy" decoding="async" />
+            <h3>Vapes & Accessories</h3>
+            <p>Premium disposables, devices, torches, and daily smoking essentials. Top brands, authentic products.</p>
+          </article>
+          
+          <article class="product-card reveal">
+            <img src="images/yelp-6.jpg" alt="Tobacco and hookah collection" loading="lazy" decoding="async" />
+            <h3>Tobacco & Hookah</h3>
+            <p>Curated selection of fine tobaccos, hookah supplies, and CBD products. Quality you can taste.</p>
+          </article>
+          
+          <article class="product-card reveal">
+            <img src="images/yelp-1.jpg" alt="Apparel and merchandise" loading="lazy" decoding="async" />
+            <h3>Apparel & More</h3>
+            <p>Streetwear, accessories, and lifestyle products. Express your style with our curated collection.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Hours & Info Section -->
+      <section id="hours" class="section">
+        <div class="split">
+          <div class="info-card reveal-left">
+            <p class="eyebrow">Hours</p>
+            <h3>Open Late Every Day</h3>
+            <ul class="hours-list">
+              <li><span class="day">Monday - Saturday</span><span>8:00 AM - 10:00 PM</span></li>
+              <li><span class="day">Sunday</span><span>9:00 AM - 9:00 PM</span></li>
+              <li><span class="day">Extended Hours</span><span>Up to 2:00 AM (Call to Confirm)</span></li>
+            </ul>
+          </div>
+          
+          <div class="info-card reveal-right">
+            <p class="eyebrow">Location</p>
+            <h3>Find Us</h3>
+            <ul class="detail-list">
+              <li><strong>Address:</strong> 5400 Olive Dr, Ste C, Bakersfield, CA 93308</li>
+              <li><strong>Phone:</strong> (661) 829-5627</li>
+              <li><strong>Category:</strong> Premium Smoke & Vape Shop</li>
+              <li><strong>Age:</strong> 21+ Only</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews Section -->
+      <section id="reviews" class="section">
+        <p class="eyebrow reveal">What People Say</p>
+        <h2 class="reveal">Customer Reviews</h2>
+        
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <h4>Great Selection</h4>
+            <p>"Amazing variety of products and the staff really knows their stuff. Found exactly what I was looking for!"</p>
+          </article>
+          
+          <article class="review-card reveal">
+            <div class="stars">★★★★☆</div>
+            <h4>Quality Products</h4>
+            <p>"Love the premium selection here. You can tell they curate their inventory carefully. Will be back!"</p>
+          </article>
+          
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <h4>Late Night Stop</h4>
+            <p>"Best part is they're open late! Perfect for those nights when you need something last minute."</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Visit Section -->
+      <section id="visit" class="section visit">
+        <div class="visit-card reveal-scale">
+          <p class="eyebrow">Visit Us Today</p>
+          <h2>5400 Olive Dr, Ste C<br>Bakersfield, CA 93308</h2>
+          <p class="address">Conveniently located on Olive Drive</p>
+          <p class="phone">
+            <a href="tel:+16618295627" class="neon-text-cyan">(661) 829-5627</a>
+          </p>
+          <div class="cta-row" style="justify-content: center; margin-top: 2rem;">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=5400+Olive+Dr+Ste+C+Bakersfield+CA+93308" target="_blank" rel="noopener noreferrer">
+              <span>🗺</span> Open In Maps
+            </a>
+            <a class="btn btn-secondary" href="sms:+16618295627">
+              <span>💬</span> Text Shop
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="contact-grid">
+          <div class="contact-info reveal-left">
+            <p class="eyebrow">Get In Touch</p>
+            <h2>Need Something Specific?</h2>
+            <p>Call us for same-day stock checks, special orders, or any questions. We're here to help!</p>
+            
+            <div class="contact-methods">
+              <a href="tel:+16618295627" class="contact-method">
+                <div class="icon">📞</div>
+                <div class="info">
+                  <h4>Call Us</h4>
+                  <p>(661) 829-5627 - Fastest response</p>
+                </div>
+              </a>
+              
+              <a href="sms:+16618295627" class="contact-method">
+                <div class="icon">💬</div>
+                <div class="info">
+                  <h4>Text Us</h4>
+                  <p>Quick questions via SMS</p>
+                </div>
+              </a>
+            </div>
+            
+            <div class="social-links">
+              <a href="#" title="Instagram">📸</a>
+              <a href="#" title="Facebook">📘</a>
+              <a href="#" title="Yelp">⭐</a>
+            </div>
+          </div>
+          
+          <div class="reveal-right" style="text-align: center;">
+            <div style="border: 1px solid var(--panel-border); border-radius: 20px; overflow: hidden;">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.954436987867!2d-119.05862868475338!3d35.35291968068168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ea5d76f1e26c6b%3A0x5d3e3c5b5b5b5b5b!2s5400%20Olive%20Dr%20Ste%20C%2C%20Bakersfield%2C%20CA%2093308!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+                width="100%" 
+                height="400" 
+                style="border:0; filter: invert(90%) hue-rotate(180deg);" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">Cigarette House</div>
+        <p class="footer-copy">© 2025 Cigarette House. All rights reserved. 21+ Only.</p>
+      </div>
+    </footer>
+
+    <!-- Mobile Bar -->
+    <div class="mobile-bar" aria-label="Quick actions">
+      <a href="tel:+16618295627">
+        <span>📞</span> Call
+      </a>
+      <a href="https://www.google.com/maps/search/?api=1&query=5400+Olive+Dr+Ste+C+Bakersfield+CA+93308" target="_blank" rel="noopener noreferrer">
+        <span>🗺</span> Directions
+      </a>
+    </div>
+
+    <!-- LEAD CAPTURE MACHINE -->
+    <!-- Floating Trigger Button -->
+    <button class="lead-trigger" id="lead-trigger" onclick="openLeadModal()">
+      <span class="lead-pulse"></span>
+      <span class="lead-icon">🔥</span>
+      <span class="lead-text">Get 15% Off</span>
+    </button>
+
+    <!-- Lead Capture Modal -->
+    <div class="lead-modal" id="lead-modal">
+      <div class="lead-backdrop" onclick="closeLeadModal()"></div>
+      <div class="lead-container">
+        <!-- Left Side - Visual -->
+        <div class="lead-visual">
+          <div class="lead-glow"></div>
+          <div class="lead-discount">
+            <span class="discount-percent">15%</span>
+            <span class="discount-text">OFF</span>
+          </div>
+          <p class="lead-visual-text">Your First Purchase</p>
+          <div class="lead-benefits">
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Instant coupon code</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Exclusive member deals</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>New product alerts</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side - Form -->
+        <div class="lead-form-section">
+          <button class="lead-close" onclick="closeLeadModal()">×</button>
+          
+          <div class="lead-header">
+            <span class="lead-badge">🚀 VIP ACCESS</span>
+            <h2>Join the Inner Circle</h2>
+            <p>Get 15% off your first order + exclusive access to new drops and member-only sales.</p>
+          </div>
+          
+          <form class="lead-form" id="lead-form" onsubmit="submitLead(event)">
+            <div class="form-group">
+              <label for="lead-name">Full Name *</label>
+              <div class="input-wrapper">
+                <span class="input-icon">👤</span>
+                <input type="text" id="lead-name" name="name" required placeholder="John Doe" autocomplete="name">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="lead-phone">Phone Number *</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📱</span>
+                <input type="tel" id="lead-phone" name="phone" required placeholder="(661) 555-0123" autocomplete="tel" pattern="[0-9\s\-\(\)\+]{10,}">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="lead-email">Email Address *</label>
+              <div class="input-wrapper">
+                <span class="input-icon">✉️</span>
+                <input type="email" id="lead-email" name="email" required placeholder="john@email.com" autocomplete="email">
+              </div>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="sms-consent" checked>
+                <span class="checkmark"></span>
+                <span class="checkbox-text">I agree to receive SMS notifications about deals & new products</span>
+              </label>
+            </div>
+            
+            <button type="submit" class="lead-submit">
+              <span class="submit-text">Get My 15% Off Coupon</span>
+              <span class="submit-arrow">→</span>
+            </button>
+          </form>
+          
+          <p class="lead-disclaimer">
+            🔒 We respect your privacy. Unsubscribe anytime. 21+ only.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lead Success Modal -->
+    <div class="lead-success" id="lead-success">
+      <div class="success-content">
+        <div class="success-icon">🎉</div>
+        <h2>You're In!</h2>
+        <p>Check your phone and email for your exclusive 15% off coupon code.</p>
+        <div class="coupon-code">
+          <span class="code-label">Your Code:</span>
+          <span class="code-value" id="coupon-code">VIP15-XXXX</span>
+          <button class="copy-btn" onclick="copyCoupon()">Copy</button>
+        </div>
+        <button class="btn btn-primary" onclick="closeSuccessModal()">Start Shopping</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>
