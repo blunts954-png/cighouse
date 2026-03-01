@@ -1,1 +1,5 @@
-node_modules
+# Static site - no build needed
+node_modules/
+.env
+.DS_Store
+*.log
